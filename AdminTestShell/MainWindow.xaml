@@ -5,22 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminTestShell"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <GroupBox>
-            <ListView ItemsSource="{Binding Users}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock>
-                            <Run Text="{Binding username}"></Run>
-                            <LineBreak></LineBreak>
-                            <Run Text="{Binding password}"></Run>
-                            <LineBreak></LineBreak>
-                            <Run Text="{Binding role1.role_name}"></Run>
-                        </TextBlock>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </GroupBox>
-    </Grid>
+        Title="AdminTestShell" Height="600" Width="920"
+    WindowStyle="SingleBorderWindow"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize"
+    Background="Transparent">
+
+    <Frame Name="AppFrame" NavigationUIVisibility="Hidden">
+        
+    </Frame>
 </Window>

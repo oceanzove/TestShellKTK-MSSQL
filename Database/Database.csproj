@@ -101,32 +101,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="TestMasterDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TestMasterDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="TestMasterDBModel.edmx.diagram">
       <DependentUpon>TestMasterDBModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="TestMasterDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TestMasterDBModel.Context.cs</LastGenOutput>
       <DependentUpon>TestMasterDBModel.edmx</DependentUpon>
+      <LastGenOutput>TestMasterDBModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="TestMasterDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TestMasterDBModel.edmx</DependentUpon>
       <LastGenOutput>TestMasterDBModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

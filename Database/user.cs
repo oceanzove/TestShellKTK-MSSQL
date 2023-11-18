@@ -25,8 +25,9 @@ namespace Database
     
         public int id { get; set; }
         public string username { get; set; }
+        public string fullName { get; set; }
         public string password { get; set; }
-        public Nullable<int> role { get; set; }
+        public int role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<assigned_test> assigned_test { get; set; }

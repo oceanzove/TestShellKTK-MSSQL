@@ -27,7 +27,7 @@ namespace Database
         public Nullable<int> created_by { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
         public Nullable<int> subject_id { get; set; }
-        public System.TimeSpan duration { get; set; }
+        public int duration { get; set; }
         public string grading_scale { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

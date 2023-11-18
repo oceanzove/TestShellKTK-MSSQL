@@ -14,23 +14,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AdminTestShell
+namespace AdminTestShell.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Administration.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Administration : Page
     {
-        public MainWindow()
+
+        public Administration()
         {
             InitializeComponent();
 
-            AppFrame.Navigate(Pages.ViewManager.Authorization);
         }
 
-        private void onClickShutdown(object sender, RoutedEventArgs e)
+        private void OnAdminsListClis(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            ListLoad.Navigate(ViewManager.Admins);
         }
+
+      
     }
 }

@@ -93,6 +93,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Heads.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Teachers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\CustomScrollBarTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -151,6 +159,12 @@
     </Compile>
     <Compile Include="Pages\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Heads.xaml.cs">
+      <DependentUpon>Heads.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Teachers.xaml.cs">
+      <DependentUpon>Teachers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

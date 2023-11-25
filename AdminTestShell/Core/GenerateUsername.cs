@@ -8,22 +8,21 @@ namespace AdminTestShell.Core
 {
     public class GenerateUsername
     {
-        public static string GetUsername(string fullName, Database.TestMasterdDBEntities entities)
+        public static string GetUsername(string fullName, Database.user9Entities entities)
         {
             var words = fullName.Split(' ');
 
-            var GeneratedUsername = words[0].ToLower() + new Random().Next(1000, 9999).ToString();
+            var generatedUsername = words[0].ToLower() + new Random().Next(1000, 9999).ToString();
 
             var users = entities.users.ToList();
             foreach (var user in users)
             {
-                if (user.username == GeneratedUsername)
+                if (user.username == generatedUsername)
                 {
                     GetUsername(fullName, entities);
                 }
-
             }
-            return GeneratedUsername;
+            return generatedUsername;
         }
     }
 }

@@ -36,18 +36,20 @@
                           Height="50"
                           Foreground="White"
                           FontSize="14"
-                          Click="OnAdminsListClis"
+                          Click="OnAdminsListClick"
                           Style="{StaticResource MenuRadioButtonTheme}"
                           IsChecked="True"/>
-                <RadioButton Content="Heads"
+                <RadioButton Content="Заучи"
                           Height="50"
                           Foreground="White"
                           FontSize="14"
+                          Click="OnHeadsListClick"
                           Style="{StaticResource MenuRadioButtonTheme}"/>
-                <RadioButton Content="Students"
+                <RadioButton Content="Преподаватели"
                           Height="50"
                           Foreground="White"
                           FontSize="14"
+                          Click="OnTeachersListClick"
                           Style="{StaticResource MenuRadioButtonTheme}"/>
 
             </StackPanel>
@@ -65,13 +67,14 @@
                      Margin="0">
 
                 <Button
-                 Content="Exit"
+                 Content="Выйти"
                  Height="50"
                  Width="100"
                  Foreground="White"
                  FontWeight="Bold"
                  FontFamily="Arial"
                  FontSize="14"
+                    Click="OnLogOutClick"
                  Style="{StaticResource MenuExitButtonTheme}">
                 </Button>
             </StackPanel>

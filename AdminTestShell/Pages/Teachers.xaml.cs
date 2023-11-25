@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,29 +18,28 @@ using System.Windows.Shapes;
 namespace AdminTestShell.Pages
 {
     /// <summary>
-    /// Interaction logic for Admins.xaml
+    /// Логика взаимодействия для Teachers.xaml
     /// </summary>
-    public partial class Admins : Page
+    public partial class Teachers : Page
     {
         private readonly Database.user9Entities database;
-        private ObservableCollection<Database.user> admins;
-
-        public Admins(Database.user9Entities entities)
+        private ObservableCollection<Database.user> teachers;
+        public Teachers(Database.user9Entities entities)
         {
             InitializeComponent();
-            database = entities;
+            this.database = entities;
 
-            admins = new ObservableCollection<Database.user>(database.users.Where(u => u.role == 4).ToList());
-            var badmins = new Binding();
-            badmins.Source = admins;
-            lbUsers.SetBinding(ItemsControl.ItemsSourceProperty, badmins);
+            teachers = new ObservableCollection<Database.user>(database.users.Where(u => u.role == 2).ToList());
+            var bteacher = new Binding();
+            bteacher.Source = teachers;
+            lbUsers.SetBinding(ItemsControl.ItemsSourceProperty, bteacher);
         }
 
-        private void OnRemoveUserClick (object sender, RoutedEventArgs e)
+        private void OnRemoveUserClick(object sender, RoutedEventArgs e)
         {
             var user = lbUsers.SelectedItem as Database.user;
             database.users.Remove(user);
-            admins.Remove(user);
+            teachers.Remove(user);
             database.SaveChanges();
 
         }

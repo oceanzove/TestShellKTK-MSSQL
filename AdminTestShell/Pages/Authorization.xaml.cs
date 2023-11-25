@@ -20,8 +20,8 @@ namespace AdminTestShell.Pages
     /// </summary>
     public partial class Authorization : Page
     {
-        private static Database.TestMasterdDBEntities database;
-        public Authorization(Database.TestMasterdDBEntities entities)
+        private static Database.user9Entities database;
+        public Authorization(Database.user9Entities entities)
         {
             InitializeComponent();
             database = entities;
@@ -36,7 +36,7 @@ namespace AdminTestShell.Pages
         {
             var username = tbLogin.Text.Trim();
             var password = tbPassword.Text.Trim();
-            var user = database.users.Where(u => u.username == username && u.password == password).Single();
+            var user = database.users.Where(u => u.username == username && u.password == password).FirstOrDefault();
             tbLogin.Clear();
             tbPassword.Clear();
             if (user != null)

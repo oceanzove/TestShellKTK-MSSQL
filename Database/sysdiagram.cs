@@ -12,14 +12,12 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class test_result
+    public partial class sysdiagram
     {
-        public int id { get; set; }
-        public Nullable<int> assigned_test_id { get; set; }
-        public Nullable<System.DateTime> start_time { get; set; }
-        public Nullable<System.DateTime> end_time { get; set; }
-        public Nullable<double> score { get; set; }
-    
-        public virtual assigned_test assigned_test { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

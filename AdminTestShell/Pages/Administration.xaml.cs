@@ -25,14 +25,27 @@ namespace AdminTestShell.Pages
         public Administration()
         {
             InitializeComponent();
-
+            ListLoad.Navigate(ViewManager.Admins);
         }
 
-        private void OnAdminsListClis(object sender, RoutedEventArgs e)
+        private void OnAdminsListClick(object sender, RoutedEventArgs e)
         {
             ListLoad.Navigate(ViewManager.Admins);
         }
 
-      
+        private void OnHeadsListClick(object sender, RoutedEventArgs e)
+        {
+            ListLoad.Navigate(ViewManager.Heads);
+        }
+
+        private void OnTeachersListClick(object sender, RoutedEventArgs e)
+        {
+            ListLoad.Navigate(ViewManager.Teachers);
+        }
+
+        private void OnLogOutClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(ViewManager.Authorization);
+        }
     }
 }

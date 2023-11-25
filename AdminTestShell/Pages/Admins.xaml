@@ -32,12 +32,68 @@
                 <ListBox Name="lbUsers" Margin="10"
                          Style="{StaticResource ListBoxTheme}"
                          ItemTemplate="{StaticResource UserListBoxTheme}"
-                         ItemContainerStyle="{StaticResource ListBoxItemTheme}">
+                         ItemContainerStyle="{StaticResource ListBoxItemTheme}"
+                         SelectionChanged="OnChangeUser">
                     <ListBox.Resources>
                         <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollBarTheme}" />
                     </ListBox.Resources>
                 </ListBox>
             </Border>
+
+            <Border
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="10"
+                 BorderBrush="{StaticResource colorDarkA1}"
+                 BorderThickness="1"
+                 CornerRadius="20">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0"
+                             BorderBrush="{StaticResource colorDarkA1}"
+                             BorderThickness="1"
+                             CornerRadius="20"
+                            Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin="10">
+                            <Label Foreground="White" FontStyle="Italic">Логин</Label>
+                            <TextBox Style="{StaticResource InputTextBox}"
+                                     Foreground="White"></TextBox>
+                        </StackPanel>
+                       
+                    </Border>
+
+                    <Border Grid.Row="1"  BorderBrush="{StaticResource colorDarkA1}"
+                             BorderThickness="1"
+                             CornerRadius="20"
+                             Margin="0 10">
+                        <StackPanel Orientation="Vertical"  Margin="10">
+                            <Label Foreground="White" FontStyle="Italic">Полное имя</Label>
+                            <TextBox Style="{StaticResource InputTextBox}"
+                                     Foreground="White"></TextBox>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Row="2"
+                             BorderBrush="{StaticResource colorDarkA1}"
+                             BorderThickness="1"
+                             CornerRadius="20" Margin="0 5">
+                        <StackPanel Orientation="Vertical" Margin="10">
+                            <Label Foreground="White" FontStyle="Italic">Пароль</Label>
+                            <TextBox Style="{StaticResource InputTextBox}"
+                                     Foreground="White"></TextBox>
+                        </StackPanel>
+                    </Border>
+                   
+                </Grid>
+            </Border>
+            
             <!-- Кнопка удалить -->
             <Border Margin="10 0 10 10" Grid.Row="1"
                     BorderBrush="{StaticResource colorDarkA1}"
@@ -49,6 +105,7 @@
                         Name="bRemoveUser"
                         IsEnabled="False"
                         FontWeight="Bold"
+                        Click="OnRemoveUserClick"
                         />
             </Border>
             </Grid>

@@ -22,9 +22,9 @@ namespace AdminTestShell.Pages
     /// </summary>
     public partial class Teachers : Page
     {
-        private readonly Database.user9Entities database;
+        private readonly Database.TestMasterdDBEntities database;
         private ObservableCollection<Database.user> teachers;
-        public Teachers(Database.user9Entities entities)
+        public Teachers(Database.TestMasterdDBEntities entities)
         {
             InitializeComponent();
             this.database = entities;

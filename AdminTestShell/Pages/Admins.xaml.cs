@@ -21,10 +21,10 @@ namespace AdminTestShell.Pages
     /// </summary>
     public partial class Admins : Page
     {
-        private readonly Database.user9Entities database;
+        private readonly Database.TestMasterdDBEntities database;
         private ObservableCollection<Database.user> admins;
 
-        public Admins(Database.user9Entities entities)
+        public Admins(Database.TestMasterdDBEntities entities)
         {
             InitializeComponent();
             database = entities;
@@ -44,9 +44,38 @@ namespace AdminTestShell.Pages
 
         }
 
+        private void OnSaveChangeClick (object sender, RoutedEventArgs e)
+        {
+            var login = tbLogin.Text.Trim();
+            var fullname = tbFullname.Text.Trim();
+            var password = tbPassword.Text.Trim();
+
+            var user = lbUsers.SelectedItem as Database.user;
+            
+            if (login != user.username)
+            {
+                user.username = login;
+            }
+            if (fullname != user.fullName)
+            {
+                user.fullName = fullname;
+            }
+            if(password != user.password)
+            {
+                user.password = password;
+            }
+            database.SaveChanges ();
+        }
+
+        private void OnCreateUserClick (object sender, RoutedEventArgs e)
+        {
+            ViewManager.CreateUser.Show();
+        }
+
         private void OnChangeUser(object sender, SelectionChangedEventArgs e)
         {
             bRemoveUser.IsEnabled = lbUsers.SelectedItem != null;
+            bSaveEdit.IsEnabled = lbUsers.SelectedItem != null;
         }
     }
 }

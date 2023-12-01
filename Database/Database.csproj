@@ -72,9 +72,6 @@
     <Compile Include="subject.cs">
       <DependentUpon>TestMasterDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>TestMasterDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="teacher_subject.cs">
       <DependentUpon>TestMasterDBModel.tt</DependentUpon>
     </Compile>
@@ -120,8 +117,8 @@
   <ItemGroup>
     <Content Include="TestMasterDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TestMasterDBModel.Context.cs</LastGenOutput>
       <DependentUpon>TestMasterDBModel.edmx</DependentUpon>
+      <LastGenOutput>TestMasterDBModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="TestMasterDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

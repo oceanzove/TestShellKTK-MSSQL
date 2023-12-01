@@ -21,10 +21,10 @@ namespace AdminTestShell.Pages
     /// </summary>
     public partial class Heads : Page
     {
-        private readonly Database.user9Entities database;
+        private readonly Database.TestMasterdDBEntities database;
         private ObservableCollection<Database.user> heads;
 
-        public Heads(Database.user9Entities entities)
+        public Heads(Database.TestMasterdDBEntities entities)
         {
             InitializeComponent();
             this.database = entities;

@@ -39,7 +39,7 @@
                     </ListBox.Resources>
                 </ListBox>
             </Border>
-
+             <!--Панель взамиодействия с пользавателями-->
             <Border
                 Grid.Row="0"
                 Grid.RowSpan="2"
@@ -53,7 +53,8 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
                     
                     <Border Grid.Row="0"
@@ -63,8 +64,10 @@
                             Margin="0 10">
                         <StackPanel Orientation="Vertical" Margin="10">
                             <Label Foreground="White" FontStyle="Italic">Логин</Label>
-                            <TextBox Style="{StaticResource InputTextBox}"
-                                     Foreground="White"></TextBox>
+                            <TextBox Text="{Binding ElementName=lbUsers, Path=SelectedItem.username}" 
+                                Style="{StaticResource InputTextBox}"
+                                     Foreground="White"
+                                     Name="tbLogin"/>
                         </StackPanel>
                        
                     </Border>
@@ -75,8 +78,10 @@
                              Margin="0 10">
                         <StackPanel Orientation="Vertical"  Margin="10">
                             <Label Foreground="White" FontStyle="Italic">Полное имя</Label>
-                            <TextBox Style="{StaticResource InputTextBox}"
-                                     Foreground="White"></TextBox>
+                            <TextBox Text="{Binding ElementName=lbUsers, Path=SelectedItem.fullName }"
+                                Style="{StaticResource InputTextBox}"
+                                     Foreground="White"
+                                     Name="tbFullname"/>
                         </StackPanel>
                     </Border>
 
@@ -86,11 +91,37 @@
                              CornerRadius="20" Margin="0 5">
                         <StackPanel Orientation="Vertical" Margin="10">
                             <Label Foreground="White" FontStyle="Italic">Пароль</Label>
-                            <TextBox Style="{StaticResource InputTextBox}"
-                                     Foreground="White"></TextBox>
+                            <TextBox Text="{Binding ElementName=lbUsers, Path=SelectedItem.password}"
+                                Style="{StaticResource InputTextBox}"
+                                     Foreground="White"
+                                     Name="tbPassword"/>
                         </StackPanel>
                     </Border>
-                   
+                    <Border Grid.Row="3"
+                           BorderBrush="{StaticResource colorDarkA1}"
+                           BorderThickness="1"
+                           CornerRadius="20" Margin="0 5">
+                        <Button Margin="10"
+                                Style="{StaticResource MenuButtonTheme}"
+                                Content="Сохранить изменения"
+                                Foreground="White"
+                                Name="bSaveEdit"
+                                IsEnabled="False"
+                                Click="OnSaveChangeClick"
+                                />
+                    </Border>
+                    <Border Grid.Row="4"
+                            BorderBrush="{StaticResource colorDarkA1}"
+                            BorderThickness="1"
+                            CornerRadius="20" Margin="0 5">
+                        <Button Margin="10"
+                               Style="{StaticResource MenuButtonTheme}"
+                               Content="Создать нового"
+                               Foreground="White"
+                               Name="bNewUser"
+                               Click="OnCreateUserClick"/>
+                    </Border>
+                    
                 </Grid>
             </Border>
             

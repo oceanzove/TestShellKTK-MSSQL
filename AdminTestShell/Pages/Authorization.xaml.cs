@@ -20,8 +20,8 @@ namespace AdminTestShell.Pages
     /// </summary>
     public partial class Authorization : Page
     {
-        private static Database.user9Entities database;
-        public Authorization(Database.user9Entities entities)
+        private static Database.TestMasterdDBEntities database;
+        public Authorization(Database.TestMasterdDBEntities entities)
         {
             InitializeComponent();
             database = entities;

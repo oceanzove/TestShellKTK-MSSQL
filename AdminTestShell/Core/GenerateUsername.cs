@@ -8,7 +8,7 @@ namespace AdminTestShell.Core
 {
     public class GenerateUsername
     {
-        public static string GetUsername(string fullName, Database.user9Entities entities)
+        public static string GetUsername(string fullName, Database.TestMasterdDBEntities entities)
         {
             var words = fullName.Split(' ');
 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище user9Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TestMasterdDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="answer_option">
           <Key>
             <PropertyRef Name="id" />
@@ -65,16 +65,6 @@
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="class_id" Type="int" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="teacher_subject">
           <Key>
             <PropertyRef Name="id" />
@@ -116,7 +106,7 @@
           <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="role" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__answer_op__quest__6BAEFA67">
+        <Association Name="FK__answer_op__quest__08B54D69">
           <End Role="question" Type="Self.question" Multiplicity="0..1" />
           <End Role="answer_option" Type="Self.answer_option" Multiplicity="*" />
           <ReferentialConstraint>
@@ -128,7 +118,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__assigned___assig__73501C2F">
+        <Association Name="FK__assigned___assig__10566F31">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -140,7 +130,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__assigned___assig__74444068">
+        <Association Name="FK__assigned___assig__114A936A">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -152,7 +142,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__assigned___test___725BF7F6">
+        <Association Name="FK__assigned___test___0F624AF8">
           <End Role="test" Type="Self.test" Multiplicity="0..1" />
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -164,7 +154,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__correct_a__corre__6F7F8B4B">
+        <Association Name="FK__correct_a__corre__0C85DE4D">
           <End Role="answer_option" Type="Self.answer_option" Multiplicity="0..1" />
           <End Role="correct_answer" Type="Self.correct_answer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -176,7 +166,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__correct_a__quest__6E8B6712">
+        <Association Name="FK__correct_a__quest__0B91BA14">
           <End Role="question" Type="Self.question" Multiplicity="0..1" />
           <End Role="correct_answer" Type="Self.correct_answer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -188,7 +178,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__question__test_i__68D28DBC">
+        <Association Name="FK__question__test_i__05D8E0BE">
           <End Role="test" Type="Self.test" Multiplicity="0..1" />
           <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
@@ -200,7 +190,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__subject__class_i__5D60DB10">
+        <Association Name="FK__subject__class_i__7A672E12">
           <End Role="class" Type="Self.class" Multiplicity="0..1" />
           <End Role="subject" Type="Self.subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -212,7 +202,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__teacher_s__subje__61316BF4">
+        <Association Name="FK__teacher_s__subje__7E37BEF6">
           <End Role="subject" Type="Self.subject" Multiplicity="0..1" />
           <End Role="teacher_subject" Type="Self.teacher_subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -224,7 +214,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__teacher_s__teach__603D47BB">
+        <Association Name="FK__teacher_s__teach__7D439ABD">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="teacher_subject" Type="Self.teacher_subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -236,7 +226,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__test__created_by__640DD89F">
+        <Association Name="FK__test__created_by__01142BA1">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="test" Type="Self.test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -248,7 +238,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__test__subject_id__65F62111">
+        <Association Name="FK__test__subject_id__02FC7413">
           <End Role="subject" Type="Self.subject" Multiplicity="0..1" />
           <End Role="test" Type="Self.test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -260,7 +250,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__test_resu__assig__7814D14C">
+        <Association Name="FK__test_resu__assig__151B244E">
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="0..1" />
           <End Role="test_result" Type="Self.test_result" Multiplicity="*" />
           <ReferentialConstraint>
@@ -272,7 +262,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__user__role__56B3DD81">
+        <Association Name="FK__user__role__73BA3083">
           <End Role="role" Type="Self.role" Multiplicity="1" />
           <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
@@ -284,7 +274,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище user9ModelContainer">
+        <EntityContainer Name="TestMasterdDBModelStoreContainer">
           <EntitySet Name="answer_option" EntityType="Self.answer_option" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="assigned_test" EntityType="Self.assigned_test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="class" EntityType="Self.class" Schema="dbo" store:Type="Tables" />
@@ -292,64 +282,63 @@
           <EntitySet Name="question" EntityType="Self.question" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="subject" EntityType="Self.subject" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="teacher_subject" EntityType="Self.teacher_subject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="test_result" EntityType="Self.test_result" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__answer_op__quest__6BAEFA67" Association="Self.FK__answer_op__quest__6BAEFA67">
+          <AssociationSet Name="FK__answer_op__quest__08B54D69" Association="Self.FK__answer_op__quest__08B54D69">
             <End Role="question" EntitySet="question" />
             <End Role="answer_option" EntitySet="answer_option" />
           </AssociationSet>
-          <AssociationSet Name="FK__assigned___assig__73501C2F" Association="Self.FK__assigned___assig__73501C2F">
+          <AssociationSet Name="FK__assigned___assig__10566F31" Association="Self.FK__assigned___assig__10566F31">
             <End Role="user" EntitySet="user" />
             <End Role="assigned_test" EntitySet="assigned_test" />
           </AssociationSet>
-          <AssociationSet Name="FK__assigned___assig__74444068" Association="Self.FK__assigned___assig__74444068">
+          <AssociationSet Name="FK__assigned___assig__114A936A" Association="Self.FK__assigned___assig__114A936A">
             <End Role="user" EntitySet="user" />
             <End Role="assigned_test" EntitySet="assigned_test" />
           </AssociationSet>
-          <AssociationSet Name="FK__assigned___test___725BF7F6" Association="Self.FK__assigned___test___725BF7F6">
+          <AssociationSet Name="FK__assigned___test___0F624AF8" Association="Self.FK__assigned___test___0F624AF8">
             <End Role="test" EntitySet="test" />
             <End Role="assigned_test" EntitySet="assigned_test" />
           </AssociationSet>
-          <AssociationSet Name="FK__correct_a__corre__6F7F8B4B" Association="Self.FK__correct_a__corre__6F7F8B4B">
+          <AssociationSet Name="FK__correct_a__corre__0C85DE4D" Association="Self.FK__correct_a__corre__0C85DE4D">
             <End Role="answer_option" EntitySet="answer_option" />
             <End Role="correct_answer" EntitySet="correct_answer" />
           </AssociationSet>
-          <AssociationSet Name="FK__correct_a__quest__6E8B6712" Association="Self.FK__correct_a__quest__6E8B6712">
+          <AssociationSet Name="FK__correct_a__quest__0B91BA14" Association="Self.FK__correct_a__quest__0B91BA14">
             <End Role="question" EntitySet="question" />
             <End Role="correct_answer" EntitySet="correct_answer" />
           </AssociationSet>
-          <AssociationSet Name="FK__question__test_i__68D28DBC" Association="Self.FK__question__test_i__68D28DBC">
+          <AssociationSet Name="FK__question__test_i__05D8E0BE" Association="Self.FK__question__test_i__05D8E0BE">
             <End Role="test" EntitySet="test" />
             <End Role="question" EntitySet="question" />
           </AssociationSet>
-          <AssociationSet Name="FK__subject__class_i__5D60DB10" Association="Self.FK__subject__class_i__5D60DB10">
+          <AssociationSet Name="FK__subject__class_i__7A672E12" Association="Self.FK__subject__class_i__7A672E12">
             <End Role="class" EntitySet="class" />
             <End Role="subject" EntitySet="subject" />
           </AssociationSet>
-          <AssociationSet Name="FK__teacher_s__subje__61316BF4" Association="Self.FK__teacher_s__subje__61316BF4">
+          <AssociationSet Name="FK__teacher_s__subje__7E37BEF6" Association="Self.FK__teacher_s__subje__7E37BEF6">
             <End Role="subject" EntitySet="subject" />
             <End Role="teacher_subject" EntitySet="teacher_subject" />
           </AssociationSet>
-          <AssociationSet Name="FK__teacher_s__teach__603D47BB" Association="Self.FK__teacher_s__teach__603D47BB">
+          <AssociationSet Name="FK__teacher_s__teach__7D439ABD" Association="Self.FK__teacher_s__teach__7D439ABD">
             <End Role="user" EntitySet="user" />
             <End Role="teacher_subject" EntitySet="teacher_subject" />
           </AssociationSet>
-          <AssociationSet Name="FK__test__created_by__640DD89F" Association="Self.FK__test__created_by__640DD89F">
+          <AssociationSet Name="FK__test__created_by__01142BA1" Association="Self.FK__test__created_by__01142BA1">
             <End Role="user" EntitySet="user" />
             <End Role="test" EntitySet="test" />
           </AssociationSet>
-          <AssociationSet Name="FK__test__subject_id__65F62111" Association="Self.FK__test__subject_id__65F62111">
+          <AssociationSet Name="FK__test__subject_id__02FC7413" Association="Self.FK__test__subject_id__02FC7413">
             <End Role="subject" EntitySet="subject" />
             <End Role="test" EntitySet="test" />
           </AssociationSet>
-          <AssociationSet Name="FK__test_resu__assig__7814D14C" Association="Self.FK__test_resu__assig__7814D14C">
+          <AssociationSet Name="FK__test_resu__assig__151B244E" Association="Self.FK__test_resu__assig__151B244E">
             <End Role="assigned_test" EntitySet="assigned_test" />
             <End Role="test_result" EntitySet="test_result" />
           </AssociationSet>
-          <AssociationSet Name="FK__user__role__56B3DD81" Association="Self.FK__user__role__56B3DD81">
+          <AssociationSet Name="FK__user__role__73BA3083" Association="Self.FK__user__role__73BA3083">
             <End Role="role" EntitySet="role" />
             <End Role="user" EntitySet="user" />
           </AssociationSet>
@@ -358,7 +347,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="user9Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TestMasterdDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="answer_option">
           <Key>
             <PropertyRef Name="id" />
@@ -366,8 +355,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="question_id" Type="Int32" />
           <Property Name="answer_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="question" Relationship="Self.FK__answer_op__quest__6BAEFA67" FromRole="answer_option" ToRole="question" />
-          <NavigationProperty Name="correct_answer" Relationship="Self.FK__correct_a__corre__6F7F8B4B" FromRole="answer_option" ToRole="correct_answer" />
+          <NavigationProperty Name="question" Relationship="Self.FK__answer_op__quest__08B54D69" FromRole="answer_option" ToRole="question" />
+          <NavigationProperty Name="correct_answer" Relationship="Self.FK__correct_a__corre__0C85DE4D" FromRole="answer_option" ToRole="correct_answer" />
         </EntityType>
         <EntityType Name="assigned_test">
           <Key>
@@ -379,10 +368,10 @@
           <Property Name="assigned_to" Type="Int32" />
           <Property Name="attempts_allowed" Type="Int32" Nullable="false" />
           <Property Name="assigned_at" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="user" Relationship="Self.FK__assigned___assig__73501C2F" FromRole="assigned_test" ToRole="user" />
-          <NavigationProperty Name="user1" Relationship="Self.FK__assigned___assig__74444068" FromRole="assigned_test" ToRole="user" />
-          <NavigationProperty Name="test" Relationship="Self.FK__assigned___test___725BF7F6" FromRole="assigned_test" ToRole="test" />
-          <NavigationProperty Name="test_result" Relationship="Self.FK__test_resu__assig__7814D14C" FromRole="assigned_test" ToRole="test_result" />
+          <NavigationProperty Name="user" Relationship="Self.FK__assigned___assig__10566F31" FromRole="assigned_test" ToRole="user" />
+          <NavigationProperty Name="user1" Relationship="Self.FK__assigned___assig__114A936A" FromRole="assigned_test" ToRole="user" />
+          <NavigationProperty Name="test" Relationship="Self.FK__assigned___test___0F624AF8" FromRole="assigned_test" ToRole="test" />
+          <NavigationProperty Name="test_result" Relationship="Self.FK__test_resu__assig__151B244E" FromRole="assigned_test" ToRole="test_result" />
         </EntityType>
         <EntityType Name="class">
           <Key>
@@ -390,7 +379,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="subjects" Relationship="Self.FK__subject__class_i__5D60DB10" FromRole="class" ToRole="subject" />
+          <NavigationProperty Name="subjects" Relationship="Self.FK__subject__class_i__7A672E12" FromRole="class" ToRole="subject" />
         </EntityType>
         <EntityType Name="correct_answer">
           <Key>
@@ -399,8 +388,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="question_id" Type="Int32" />
           <Property Name="correct_option_id" Type="Int32" />
-          <NavigationProperty Name="answer_option" Relationship="Self.FK__correct_a__corre__6F7F8B4B" FromRole="correct_answer" ToRole="answer_option" />
-          <NavigationProperty Name="question" Relationship="Self.FK__correct_a__quest__6E8B6712" FromRole="correct_answer" ToRole="question" />
+          <NavigationProperty Name="answer_option" Relationship="Self.FK__correct_a__corre__0C85DE4D" FromRole="correct_answer" ToRole="answer_option" />
+          <NavigationProperty Name="question" Relationship="Self.FK__correct_a__quest__0B91BA14" FromRole="correct_answer" ToRole="question" />
         </EntityType>
         <EntityType Name="question">
           <Key>
@@ -412,9 +401,9 @@
           <Property Name="hint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="weight" Type="Int32" Nullable="false" />
           <Property Name="question_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="answer_option" Relationship="Self.FK__answer_op__quest__6BAEFA67" FromRole="question" ToRole="answer_option" />
-          <NavigationProperty Name="correct_answer" Relationship="Self.FK__correct_a__quest__6E8B6712" FromRole="question" ToRole="correct_answer" />
-          <NavigationProperty Name="test" Relationship="Self.FK__question__test_i__68D28DBC" FromRole="question" ToRole="test" />
+          <NavigationProperty Name="answer_option" Relationship="Self.FK__answer_op__quest__08B54D69" FromRole="question" ToRole="answer_option" />
+          <NavigationProperty Name="correct_answer" Relationship="Self.FK__correct_a__quest__0B91BA14" FromRole="question" ToRole="correct_answer" />
+          <NavigationProperty Name="test" Relationship="Self.FK__question__test_i__05D8E0BE" FromRole="question" ToRole="test" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -422,7 +411,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="users" Relationship="Self.FK__user__role__56B3DD81" FromRole="role" ToRole="user" />
+          <NavigationProperty Name="users" Relationship="Self.FK__user__role__73BA3083" FromRole="role" ToRole="user" />
         </EntityType>
         <EntityType Name="subject">
           <Key>
@@ -431,19 +420,9 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="class_id" Type="Int32" />
-          <NavigationProperty Name="class" Relationship="Self.FK__subject__class_i__5D60DB10" FromRole="subject" ToRole="class" />
-          <NavigationProperty Name="teacher_subject" Relationship="Self.FK__teacher_s__subje__61316BF4" FromRole="subject" ToRole="teacher_subject" />
-          <NavigationProperty Name="tests" Relationship="Self.FK__test__subject_id__65F62111" FromRole="subject" ToRole="test" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="class" Relationship="Self.FK__subject__class_i__7A672E12" FromRole="subject" ToRole="class" />
+          <NavigationProperty Name="teacher_subject" Relationship="Self.FK__teacher_s__subje__7E37BEF6" FromRole="subject" ToRole="teacher_subject" />
+          <NavigationProperty Name="tests" Relationship="Self.FK__test__subject_id__02FC7413" FromRole="subject" ToRole="test" />
         </EntityType>
         <EntityType Name="teacher_subject">
           <Key>
@@ -452,8 +431,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="teacher_id" Type="Int32" />
           <Property Name="subject_id" Type="Int32" />
-          <NavigationProperty Name="subject" Relationship="Self.FK__teacher_s__subje__61316BF4" FromRole="teacher_subject" ToRole="subject" />
-          <NavigationProperty Name="user" Relationship="Self.FK__teacher_s__teach__603D47BB" FromRole="teacher_subject" ToRole="user" />
+          <NavigationProperty Name="subject" Relationship="Self.FK__teacher_s__subje__7E37BEF6" FromRole="teacher_subject" ToRole="subject" />
+          <NavigationProperty Name="user" Relationship="Self.FK__teacher_s__teach__7D439ABD" FromRole="teacher_subject" ToRole="user" />
         </EntityType>
         <EntityType Name="test">
           <Key>
@@ -467,10 +446,10 @@
           <Property Name="subject_id" Type="Int32" />
           <Property Name="duration" Type="Int32" Nullable="false" />
           <Property Name="grading_scale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="assigned_test" Relationship="Self.FK__assigned___test___725BF7F6" FromRole="test" ToRole="assigned_test" />
-          <NavigationProperty Name="questions" Relationship="Self.FK__question__test_i__68D28DBC" FromRole="test" ToRole="question" />
-          <NavigationProperty Name="subject" Relationship="Self.FK__test__subject_id__65F62111" FromRole="test" ToRole="subject" />
-          <NavigationProperty Name="user" Relationship="Self.FK__test__created_by__640DD89F" FromRole="test" ToRole="user" />
+          <NavigationProperty Name="assigned_test" Relationship="Self.FK__assigned___test___0F624AF8" FromRole="test" ToRole="assigned_test" />
+          <NavigationProperty Name="questions" Relationship="Self.FK__question__test_i__05D8E0BE" FromRole="test" ToRole="question" />
+          <NavigationProperty Name="subject" Relationship="Self.FK__test__subject_id__02FC7413" FromRole="test" ToRole="subject" />
+          <NavigationProperty Name="user" Relationship="Self.FK__test__created_by__01142BA1" FromRole="test" ToRole="user" />
         </EntityType>
         <EntityType Name="test_result">
           <Key>
@@ -481,7 +460,7 @@
           <Property Name="start_time" Type="DateTime" Precision="3" />
           <Property Name="end_time" Type="DateTime" Precision="3" />
           <Property Name="score" Type="Double" />
-          <NavigationProperty Name="assigned_test" Relationship="Self.FK__test_resu__assig__7814D14C" FromRole="test_result" ToRole="assigned_test" />
+          <NavigationProperty Name="assigned_test" Relationship="Self.FK__test_resu__assig__151B244E" FromRole="test_result" ToRole="assigned_test" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -492,13 +471,13 @@
           <Property Name="fullName" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="role" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="assigned_test" Relationship="Self.FK__assigned___assig__73501C2F" FromRole="user" ToRole="assigned_test" />
-          <NavigationProperty Name="assigned_test1" Relationship="Self.FK__assigned___assig__74444068" FromRole="user" ToRole="assigned_test" />
-          <NavigationProperty Name="role1" Relationship="Self.FK__user__role__56B3DD81" FromRole="user" ToRole="role" />
-          <NavigationProperty Name="teacher_subject" Relationship="Self.FK__teacher_s__teach__603D47BB" FromRole="user" ToRole="teacher_subject" />
-          <NavigationProperty Name="tests" Relationship="Self.FK__test__created_by__640DD89F" FromRole="user" ToRole="test" />
+          <NavigationProperty Name="assigned_test" Relationship="Self.FK__assigned___assig__10566F31" FromRole="user" ToRole="assigned_test" />
+          <NavigationProperty Name="assigned_test1" Relationship="Self.FK__assigned___assig__114A936A" FromRole="user" ToRole="assigned_test" />
+          <NavigationProperty Name="role1" Relationship="Self.FK__user__role__73BA3083" FromRole="user" ToRole="role" />
+          <NavigationProperty Name="teacher_subject" Relationship="Self.FK__teacher_s__teach__7D439ABD" FromRole="user" ToRole="teacher_subject" />
+          <NavigationProperty Name="tests" Relationship="Self.FK__test__created_by__01142BA1" FromRole="user" ToRole="test" />
         </EntityType>
-        <Association Name="FK__answer_op__quest__6BAEFA67">
+        <Association Name="FK__answer_op__quest__08B54D69">
           <End Role="question" Type="Self.question" Multiplicity="0..1" />
           <End Role="answer_option" Type="Self.answer_option" Multiplicity="*" />
           <ReferentialConstraint>
@@ -510,7 +489,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__correct_a__corre__6F7F8B4B">
+        <Association Name="FK__correct_a__corre__0C85DE4D">
           <End Role="answer_option" Type="Self.answer_option" Multiplicity="0..1" />
           <End Role="correct_answer" Type="Self.correct_answer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -522,7 +501,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__assigned___assig__73501C2F">
+        <Association Name="FK__assigned___assig__10566F31">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -534,7 +513,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__assigned___assig__74444068">
+        <Association Name="FK__assigned___assig__114A936A">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -546,7 +525,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__assigned___test___725BF7F6">
+        <Association Name="FK__assigned___test___0F624AF8">
           <End Role="test" Type="Self.test" Multiplicity="0..1" />
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -558,7 +537,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__test_resu__assig__7814D14C">
+        <Association Name="FK__test_resu__assig__151B244E">
           <End Role="assigned_test" Type="Self.assigned_test" Multiplicity="0..1" />
           <End Role="test_result" Type="Self.test_result" Multiplicity="*" />
           <ReferentialConstraint>
@@ -570,7 +549,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__subject__class_i__5D60DB10">
+        <Association Name="FK__subject__class_i__7A672E12">
           <End Role="class" Type="Self.class" Multiplicity="0..1" />
           <End Role="subject" Type="Self.subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -582,7 +561,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__correct_a__quest__6E8B6712">
+        <Association Name="FK__correct_a__quest__0B91BA14">
           <End Role="question" Type="Self.question" Multiplicity="0..1" />
           <End Role="correct_answer" Type="Self.correct_answer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -594,7 +573,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__question__test_i__68D28DBC">
+        <Association Name="FK__question__test_i__05D8E0BE">
           <End Role="test" Type="Self.test" Multiplicity="0..1" />
           <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
@@ -606,7 +585,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__user__role__56B3DD81">
+        <Association Name="FK__user__role__73BA3083">
           <End Role="role" Type="Self.role" Multiplicity="1" />
           <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
@@ -618,7 +597,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__teacher_s__subje__61316BF4">
+        <Association Name="FK__teacher_s__subje__7E37BEF6">
           <End Role="subject" Type="Self.subject" Multiplicity="0..1" />
           <End Role="teacher_subject" Type="Self.teacher_subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -630,7 +609,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__test__subject_id__65F62111">
+        <Association Name="FK__test__subject_id__02FC7413">
           <End Role="subject" Type="Self.subject" Multiplicity="0..1" />
           <End Role="test" Type="Self.test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -642,7 +621,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__teacher_s__teach__603D47BB">
+        <Association Name="FK__teacher_s__teach__7D439ABD">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="teacher_subject" Type="Self.teacher_subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -654,7 +633,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__test__created_by__640DD89F">
+        <Association Name="FK__test__created_by__01142BA1">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="test" Type="Self.test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -666,7 +645,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="user9Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TestMasterdDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="answer_option" EntityType="Self.answer_option" />
           <EntitySet Name="assigned_test" EntityType="Self.assigned_test" />
           <EntitySet Name="classes" EntityType="Self.class" />
@@ -674,64 +653,63 @@
           <EntitySet Name="questions" EntityType="Self.question" />
           <EntitySet Name="roles" EntityType="Self.role" />
           <EntitySet Name="subjects" EntityType="Self.subject" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="teacher_subject" EntityType="Self.teacher_subject" />
           <EntitySet Name="tests" EntityType="Self.test" />
           <EntitySet Name="test_result" EntityType="Self.test_result" />
           <EntitySet Name="users" EntityType="Self.user" />
-          <AssociationSet Name="FK__answer_op__quest__6BAEFA67" Association="Self.FK__answer_op__quest__6BAEFA67">
+          <AssociationSet Name="FK__answer_op__quest__08B54D69" Association="Self.FK__answer_op__quest__08B54D69">
             <End Role="question" EntitySet="questions" />
             <End Role="answer_option" EntitySet="answer_option" />
           </AssociationSet>
-          <AssociationSet Name="FK__correct_a__corre__6F7F8B4B" Association="Self.FK__correct_a__corre__6F7F8B4B">
+          <AssociationSet Name="FK__correct_a__corre__0C85DE4D" Association="Self.FK__correct_a__corre__0C85DE4D">
             <End Role="answer_option" EntitySet="answer_option" />
             <End Role="correct_answer" EntitySet="correct_answer" />
           </AssociationSet>
-          <AssociationSet Name="FK__assigned___assig__73501C2F" Association="Self.FK__assigned___assig__73501C2F">
+          <AssociationSet Name="FK__assigned___assig__10566F31" Association="Self.FK__assigned___assig__10566F31">
             <End Role="user" EntitySet="users" />
             <End Role="assigned_test" EntitySet="assigned_test" />
           </AssociationSet>
-          <AssociationSet Name="FK__assigned___assig__74444068" Association="Self.FK__assigned___assig__74444068">
+          <AssociationSet Name="FK__assigned___assig__114A936A" Association="Self.FK__assigned___assig__114A936A">
             <End Role="user" EntitySet="users" />
             <End Role="assigned_test" EntitySet="assigned_test" />
           </AssociationSet>
-          <AssociationSet Name="FK__assigned___test___725BF7F6" Association="Self.FK__assigned___test___725BF7F6">
+          <AssociationSet Name="FK__assigned___test___0F624AF8" Association="Self.FK__assigned___test___0F624AF8">
             <End Role="test" EntitySet="tests" />
             <End Role="assigned_test" EntitySet="assigned_test" />
           </AssociationSet>
-          <AssociationSet Name="FK__test_resu__assig__7814D14C" Association="Self.FK__test_resu__assig__7814D14C">
+          <AssociationSet Name="FK__test_resu__assig__151B244E" Association="Self.FK__test_resu__assig__151B244E">
             <End Role="assigned_test" EntitySet="assigned_test" />
             <End Role="test_result" EntitySet="test_result" />
           </AssociationSet>
-          <AssociationSet Name="FK__subject__class_i__5D60DB10" Association="Self.FK__subject__class_i__5D60DB10">
+          <AssociationSet Name="FK__subject__class_i__7A672E12" Association="Self.FK__subject__class_i__7A672E12">
             <End Role="class" EntitySet="classes" />
             <End Role="subject" EntitySet="subjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__correct_a__quest__6E8B6712" Association="Self.FK__correct_a__quest__6E8B6712">
+          <AssociationSet Name="FK__correct_a__quest__0B91BA14" Association="Self.FK__correct_a__quest__0B91BA14">
             <End Role="question" EntitySet="questions" />
             <End Role="correct_answer" EntitySet="correct_answer" />
           </AssociationSet>
-          <AssociationSet Name="FK__question__test_i__68D28DBC" Association="Self.FK__question__test_i__68D28DBC">
+          <AssociationSet Name="FK__question__test_i__05D8E0BE" Association="Self.FK__question__test_i__05D8E0BE">
             <End Role="test" EntitySet="tests" />
             <End Role="question" EntitySet="questions" />
           </AssociationSet>
-          <AssociationSet Name="FK__user__role__56B3DD81" Association="Self.FK__user__role__56B3DD81">
+          <AssociationSet Name="FK__user__role__73BA3083" Association="Self.FK__user__role__73BA3083">
             <End Role="role" EntitySet="roles" />
             <End Role="user" EntitySet="users" />
           </AssociationSet>
-          <AssociationSet Name="FK__teacher_s__subje__61316BF4" Association="Self.FK__teacher_s__subje__61316BF4">
+          <AssociationSet Name="FK__teacher_s__subje__7E37BEF6" Association="Self.FK__teacher_s__subje__7E37BEF6">
             <End Role="subject" EntitySet="subjects" />
             <End Role="teacher_subject" EntitySet="teacher_subject" />
           </AssociationSet>
-          <AssociationSet Name="FK__test__subject_id__65F62111" Association="Self.FK__test__subject_id__65F62111">
+          <AssociationSet Name="FK__test__subject_id__02FC7413" Association="Self.FK__test__subject_id__02FC7413">
             <End Role="subject" EntitySet="subjects" />
             <End Role="test" EntitySet="tests" />
           </AssociationSet>
-          <AssociationSet Name="FK__teacher_s__teach__603D47BB" Association="Self.FK__teacher_s__teach__603D47BB">
+          <AssociationSet Name="FK__teacher_s__teach__7D439ABD" Association="Self.FK__teacher_s__teach__7D439ABD">
             <End Role="user" EntitySet="users" />
             <End Role="teacher_subject" EntitySet="teacher_subject" />
           </AssociationSet>
-          <AssociationSet Name="FK__test__created_by__640DD89F" Association="Self.FK__test__created_by__640DD89F">
+          <AssociationSet Name="FK__test__created_by__01142BA1" Association="Self.FK__test__created_by__01142BA1">
             <End Role="user" EntitySet="users" />
             <End Role="test" EntitySet="tests" />
           </AssociationSet>
@@ -741,9 +719,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище user9ModelContainer" CdmEntityContainer="user9Entities">
+        <EntityContainerMapping StorageEntityContainer="TestMasterdDBModelStoreContainer" CdmEntityContainer="TestMasterdDBEntities">
           <EntitySetMapping Name="answer_option">
-            <EntityTypeMapping TypeName="user9Model.answer_option">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.answer_option">
               <MappingFragment StoreEntitySet="answer_option">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="question_id" ColumnName="question_id" />
@@ -752,7 +730,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="assigned_test">
-            <EntityTypeMapping TypeName="user9Model.assigned_test">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.assigned_test">
               <MappingFragment StoreEntitySet="assigned_test">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="test_id" ColumnName="test_id" />
@@ -764,7 +742,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="classes">
-            <EntityTypeMapping TypeName="user9Model.class">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.class">
               <MappingFragment StoreEntitySet="class">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -772,7 +750,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="correct_answer">
-            <EntityTypeMapping TypeName="user9Model.correct_answer">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.correct_answer">
               <MappingFragment StoreEntitySet="correct_answer">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="question_id" ColumnName="question_id" />
@@ -781,7 +759,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="questions">
-            <EntityTypeMapping TypeName="user9Model.question">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.question">
               <MappingFragment StoreEntitySet="question">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="test_id" ColumnName="test_id" />
@@ -793,7 +771,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="roles">
-            <EntityTypeMapping TypeName="user9Model.role">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.role">
               <MappingFragment StoreEntitySet="role">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="role_name" ColumnName="role_name" />
@@ -801,7 +779,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="subjects">
-            <EntityTypeMapping TypeName="user9Model.subject">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.subject">
               <MappingFragment StoreEntitySet="subject">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -809,19 +787,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="user9Model.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="teacher_subject">
-            <EntityTypeMapping TypeName="user9Model.teacher_subject">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.teacher_subject">
               <MappingFragment StoreEntitySet="teacher_subject">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
@@ -830,7 +797,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tests">
-            <EntityTypeMapping TypeName="user9Model.test">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.test">
               <MappingFragment StoreEntitySet="test">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -844,7 +811,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="test_result">
-            <EntityTypeMapping TypeName="user9Model.test_result">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.test_result">
               <MappingFragment StoreEntitySet="test_result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="assigned_test_id" ColumnName="assigned_test_id" />
@@ -855,7 +822,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="user9Model.user">
+            <EntityTypeMapping TypeName="TestMasterdDBModel.user">
               <MappingFragment StoreEntitySet="user">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="username" ColumnName="username" />
@@ -882,7 +849,7 @@
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

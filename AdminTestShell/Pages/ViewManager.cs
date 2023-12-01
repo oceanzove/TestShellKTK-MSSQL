@@ -10,21 +10,22 @@ namespace AdminTestShell.Pages
 {
     public class ViewManager
     {
-        private static Database.user9Entities database;
+        private static Database.TestMasterdDBEntities database;
 
         private static Administration administration;
         private static Admins admins;
+        private static CreateUser createUser;
         private static Heads heads;
         private static Teachers teachers;
         private static Authorization authorization;
 
-        private static Database.user9Entities Database
+        private static Database.TestMasterdDBEntities Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new Database.user9Entities();
+                    database = new Database.TestMasterdDBEntities();
                     if (database.Database.Exists() == false)
                     {
                         MessageBox.Show("Подключение к базе данных не было выполнено. Приложение будет завершено.",
@@ -57,6 +58,18 @@ namespace AdminTestShell.Pages
                     admins = new Admins(database);
                 }
                 return admins;
+            }
+        }
+
+        public static CreateUser CreateUser
+        {
+            get
+            {
+                if (createUser == null)
+                {
+                    createUser = new CreateUser(database);
+                }
+                return createUser;
             }
         }
 

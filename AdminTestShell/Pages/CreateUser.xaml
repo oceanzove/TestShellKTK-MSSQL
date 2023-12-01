@@ -8,9 +8,46 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="{StaticResource colorDark1}"
+        Background="Transparent"
+        Window.AllowsTransparency="True"
         Title="CreateUser" Height="200" Width="300">
-    <Grid>
-        <Button Click="Button_Click">Выйти</Button>
-    </Grid>
+    <Border CornerRadius="20" Background="{StaticResource colorDark1}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="40 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <Label Foreground="White">Фио</Label>
+                    <TextBox Style="{StaticResource InputTextBox}"
+                             Foreground="White"
+                             Name="tbFullname"
+                             TextChanged="OnInputChange"/>
+                </StackPanel>
+                <Button Grid.Row="1" Margin="10" Style="{StaticResource MenuButtonTheme}" Content="Создать" Foreground="White"
+                        Click="OnCreateUserClick" IsEnabled="False" Name="bCreateUser"/>
+            </Grid>
+            
+            
+            
+            
+            <Button Grid.Row="0" Grid.Column="2" Margin="10"
+                    Content="Отмена"
+                    Foreground="White"
+                    Style="{StaticResource MenuExitButtonTheme}"
+                    Click="OnCloseClick"/>
+            
+        </Grid>
+    </Border>
 </Window>

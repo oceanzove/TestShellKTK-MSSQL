@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,12 @@ namespace AdminTestShell.Core
 
             var generatedUsername = words[0].ToLower() + new Random().Next(1000, 9999).ToString();
 
-            var users = entities.users.ToList();
-            foreach (var user in users)
+            var user = entities.users.Where(u => u.username == generatedUsername).FirstOrDefault();
+            if (user != null)
             {
-                if (user.username == generatedUsername)
-                {
-                    GetUsername(fullName, entities);
-                }
+                GetUsername(fullName, entities);
             }
+            
             return generatedUsername;
         }
     }

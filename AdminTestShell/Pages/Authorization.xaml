@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Height="600" Width="920"
       Title="Authorization">
-    <Border Background="{StaticResource colorDark1}" >
+    <Border Background="{StaticResource colorDark1}" CornerRadius="0 0 20 20" >
         <Border Background="{StaticResource colorDarkA1}" Margin="300 170"
              CornerRadius="20">
             <Grid>

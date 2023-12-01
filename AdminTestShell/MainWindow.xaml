@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:AdminTestShell"
         mc:Ignorable="d"
         Title="AdminTestShell" Height="600" Width="920"
-    WindowStyle="SingleBorderWindow"
+    WindowStyle="None"
     WindowStartupLocation="CenterScreen"
     ResizeMode="NoResize"
+    Window.AllowsTransparency = "True"
     Background="Transparent">
 
     <Frame Name="AppFrame" NavigationUIVisibility="Hidden">
